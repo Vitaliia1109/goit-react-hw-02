@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.noFeedback {
+  font-size: 30px;
+  text-align: start;
+  font-weight: 400;
+}
