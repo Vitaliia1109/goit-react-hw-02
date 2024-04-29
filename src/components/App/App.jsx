@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.module.css'
+import './App.css'
 import Description from '../Description/Description'
 import Feedback from '../Feedback/Feedback'
 import Options from '../Options/Options'
