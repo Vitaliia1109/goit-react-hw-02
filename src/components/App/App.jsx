@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import css from './App.module.css'
+import './App.module.css'
 import Description from '../Description/Description'
 import Feedback from '../Feedback/Feedback'
 import Options from '../Options/Options'
+import Notification from '../Notification/Notification'
 
 
 function App() {
@@ -39,13 +40,14 @@ function App() {
     })
   }
   const totalFeedback = state.good + state.neutral + state.bad
+  const positiveFeedback = totalFeedback ? Math.round((state.good / totalFeedback) * 100) : 0
   
   return (
     <>
       <Description />
       <Options updateFeedback={updateFeedback} handleReset={handleReset} totalFeedback={totalFeedback} />
-      {totalFeedback ? <Feedback state={state} totalFeedback={totalFeedback} /> : null}
-      {!totalFeedback? <h1 className={css.noFeedback}>No feedback given</h1> : null}
+      {totalFeedback ? <Feedback state={state} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback}/> : null}
+      {!totalFeedback? <Notification message="No feedback given" /> : null}
     </>
     
   )

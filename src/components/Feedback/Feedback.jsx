@@ -1,7 +1,7 @@
 import css from './Feedback.module.css'
 
-export default function Feedback({ state: { good, neutral, bad }, totalFeedback }) {
-  const positiveFeedback = totalFeedback ? Math.round((good / totalFeedback) * 100) : 0
+export default function Feedback({ state: { good, neutral, bad }, totalFeedback, positiveFeedback }) {
+  
   return (
     <div className={css.feedbackBlock}>
         <p>Good: { good }</p>
